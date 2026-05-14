@@ -1,6 +1,6 @@
-@use './block/general';
-@use './block/fonts';
 @use './block/reset';
-// @import './block/';
-// @import './block/';
+@use './block/general' as *;
+@use './block/fonts';
+@import './block/var';
+@import './block/container';
 // @import './block/';

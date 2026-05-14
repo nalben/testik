@@ -4,16 +4,77 @@
     $slope: math.div($max - $min, $maxVW - $minVW);
     $yAxisIntersection: $min - $slope * $minVW;
 
-    @return clamp(#{math.div($min, $base)}rem,
+    $minValue: math.min($min, $max);
+    $maxValue: math.max($min, $max);
+
+    @return clamp(#{math.div($minValue, $base)}rem,
         #{math.div($yAxisIntersection, $base)}rem + #{$slope * 100}vw,
-        #{math.div($max, $base)}rem);
+        #{math.div($maxValue, $base)}rem);
 }
 
 @function fluid-prop-dvh($max, $min, $maxVH: 1080, $minVH: 640, $base: 16) {
     $slope: math.div($max - $min, $maxVH - $minVH);
     $yAxisIntersection: $min - $slope * $minVH;
 
-    @return clamp(#{math.div($min, $base)}rem,
+    $minValue: math.min($min, $max);
+    $maxValue: math.max($min, $max);
+
+    @return clamp(#{math.div($minValue, $base)}rem,
         #{math.div($yAxisIntersection, $base)}rem + #{$slope * 100}dvh,
-        #{math.div($max, $base)}rem);
+        #{math.div($maxValue, $base)}rem);
 }
+span{
+    color: var(--accent);
+}
+img{
+    object-fit: cover;
+}
+h1{
+    font-size: fluid-prop(34,24,960,375);
+    font-weight: 700;
+    line-height: 112%;
+}
+h2{
+    font-weight: 700;
+    font-size: fluid-prop(24,20,960,375);
+    line-height: 100%;
+}
+h3{
+    line-height: 150%;
+    font-size: fluid-prop(17,15,960,375);
+}
+h4{
+    font-weight: 700;
+    font-size: fluid-prop(22,20,960,375);
+}
+h5{
+    font-weight: 400;
+    font-size: fluid-prop(14,15,960,375);
+}
+
+a:focus {
+    outline: 3px solid var(--accent);
+    border-radius: 8px;
+}
+summary:focus{
+    outline: 1px solid var(--accent);
+    border-radius: 8px;
+}
+
+button{
+    & a{
+        padding-block: fluid-prop(14,12,960,375);
+        padding-inline: fluid-prop(28,22,960,375);
+    }
+    &:not(:has(a)){
+        padding-block: fluid-prop(14,12,960,375);
+        padding-inline: fluid-prop(28,22,960,375);
+    }
+    background-color: var(--accent);
+    color: var(--white);
+    border-radius: 8px;
+    font-size: fluid-prop(16,15,960,375);
+    font-weight: 600;
+    width: fit-content;
+}
+

@@ -6,10 +6,145 @@
     <title>Уютная кухня</title>
     <link rel="stylesheet" href="./swiper/node_modules/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/main.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
-    mama
+    <div class="container">
+
+        <header class="header">
+            <div class="logo">
+                <img src="./imgicons/Frame.svg" alt="Уютная кухня">
+                <div class="logo_name">
+                    <strong>Уютная</strong> <span>кухня</span>
+                </div>
+            </div>
+            <nav class="menu">
+                <li><a href="">Меню</a></li>
+                <li><span><a href="#form">К бронированию</a></span></li>
+            </nav>
+        </header>
+
+        <main class="hero">
+            <img src="./imgicons/heroImgM.png" alt="restaurant">
+            <img src="./imgicons/heroImg.png" alt="restaurant">
+            <h1>Домашнаяя кухня в центре города</h1>
+            <h3>Бронируйте стол онлайн — мы подготовим всё к вашему приходу.</h3>
+            <button><a href="#form">Забронировать стол</a></button>
+        </main>
+
+        <main class="rating">
+            <h3>Нравится атмосфера?</h3>
+            <span><a href="#form">Перейти к форме бронирования</a></span>
+        </main>
+
+        <main class="slider">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./imgicons/c1.png" /></div>
+                    <div class="swiper-slide"><img src="./imgicons/c2.png" /></div>
+                    <div class="swiper-slide"><img src="./imgicons/c3.png" /></div>
+                    <div class="swiper-slide"><img src="./imgicons/c4.png" /></div>
+                    <div class="swiper-slide"><img src="./imgicons/c5.png" /></div>
+                    <div class="swiper-slide"><img src="./imgicons/c6.png" /></div>
+                    <div class="swiper-slide"><img src="./imgicons/c7.png" /></div>
+                    <div class="swiper-slide"><img src="./imgicons/c8.png" /></div>
+                    <div class="swiper-slide"><img src="./imgicons/c9.png" /></div>
+                </div>
+            </div>
+            
+            <div class="swiper-button-prev"><span>‹</span></div>
+            <div class="swiper-button-next"><span>›</span></div>
+            <div class="swiper-pagination"></div>
+        </main>
+
+        <main class="faq">
+            <h2>Частые вопросы</h2>
+
+            <div class="accordion">
+                <details>
+                    <summary>
+                        <span>
+                            Часы работы
+                            <div class="minus">+</div>
+                        </span>
+
+                        <div class="content">
+                            <div class="content-inner">
+                                Пн–Чт 10:00–22:00 · Пт–Сб 10:00–23:00 · Вс 11:00–21:00
+                            </div>
+                        </div>
+                    </summary>
+                </details>
+                <details>
+                    <summary>
+                        <span>
+                            Как добраться
+                            <div class="minus">+</div>
+                        </span>
+                        <div class="content">
+                            <div class="content-inner">
+                                м. Тверская, 5 минут пешком. Вход со двора, домофон 42.
+                            </div>
+                        </div>
+                    </summary>
+                </details>
+                <details>
+                    <summary>
+                        <span>
+                            Детям и особые пожелания
+                            <div class="minus">+</div>
+                        </span>
+                        <div class="content">
+                            <div class="content-inner">
+                                Детское меню и стульчики. Сообщите об аллергиях в форме бронирования.
+                            </div>
+                        </div>
+                    </summary>
+                </details>
+            </div>
+        </main>
+
+        <main class="form" id="form">
+            <h2>Бронирование стола</h2>
+            <h3>Заполните поля — перезвоним для подтверждения.</h3>
+        
+            <form class="form_form" action="" method="post">
+                <label>
+                    Имя
+                    <input type="text" name="first_name" required minlength="2">
+                </label>
+        
+                <label>
+                    Фамилия
+                    <input type="text" name="last_name" required minlength="2">
+                </label>
+        
+                <label>
+                    Email
+                    <input type="email" name="email" required>
+                </label>
+        
+                <label>
+                    Телефон
+                    <input type="tel" name="phone" required pattern="^[0-9+\-\s()]{7,}$">
+                </label>
+        
+                <button type="submit">Отправить</button>
+            </form>
+        </main>
+        
+        <div class="modal" id="modal">
+            <div class="modal__content">
+                <h4>Заявка отправлена.</h4>
+                <h5>Спасибо! Мы свяжемся с Вами в ближайшее время для подтверждения брони.</h5>
+                <button id="closeModal" class="button">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <script src="./swiper/node_modules/swiper/swiper-bundle.min.js"></script>
     <script src="./script/slider.js"></script>
     <script src="./script/popup.js"></script>
