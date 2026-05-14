@@ -61,31 +61,33 @@ items.forEach((item) => {
   });
 });
 
-const form = document.querySelector(".form_form");
-const modal = document.getElementById("modal");
-const closeBtn = document.getElementById("closeModal");
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector(".form_form");
+    const modal = document.getElementById("modal");
+    const closeBtn = document.getElementById("closeModal");
 
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-    }
-
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
-});
-
-function closeModal() {
     modal.style.display = "none";
-    document.body.style.overflow = "";
-}
 
-closeBtn.addEventListener("click", closeModal);
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-modal.addEventListener("click", function (e) {
-    if (e.target === modal) {
-        closeModal();
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+    });
+
+    function closeModal() {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
     }
+
+    closeBtn.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+    });
 });
