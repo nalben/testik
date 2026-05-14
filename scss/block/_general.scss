@@ -1,4 +1,5 @@
 @use "sass:math";
+
 @function fluid-prop($max, $min, $maxVW: 1920, $minVW: 390, $base: 16) {
     $slope: math.div($max - $min, $maxVW - $minVW);
     $yAxisIntersection: $min - $slope * $minVW;
@@ -7,7 +8,12 @@
         #{math.div($yAxisIntersection, $base)}rem + #{$slope * 100}vw,
         #{math.div($max, $base)}rem);
 }
-* {
-    color: white;
-    font-family: Actay;
+
+@function fluid-prop-dvh($max, $min, $maxVH: 1080, $minVH: 640, $base: 16) {
+    $slope: math.div($max - $min, $maxVH - $minVH);
+    $yAxisIntersection: $min - $slope * $minVH;
+
+    @return clamp(#{math.div($min, $base)}rem,
+        #{math.div($yAxisIntersection, $base)}rem + #{$slope * 100}dvh,
+        #{math.div($max, $base)}rem);
 }
