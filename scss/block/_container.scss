@@ -150,10 +150,15 @@ body {
         justify-content: center;
         top: 50%;
         z-index: 10;
-
         &::after {
             display: none;
         }
+        &:hover {
+            opacity: 0.5;
+            transition: all 0.5s;
+        }
+
+        transition: all 0.5s;
     }
 
     .swiper-button-prev {
@@ -215,6 +220,9 @@ $accordion-duration: 0.5s;
 
 details:not([open]) summary:hover {
     opacity: 0.6;
+    transition: all 0.5s;
+}
+details:not([open]) summary{
     transition: all 0.5s;
 }
 
